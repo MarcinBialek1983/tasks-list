@@ -10,6 +10,19 @@
         },
     ];
 
+    const addNewTask = (newTaskContent) => {
+        tasks.push({
+            content: newTaskContent,
+        });
+        render();
+    };
+
+const removeTask = (index) => {
+    tasks.splice(index, 1);
+    render();
+ 
+}
+
     const render = () => {
         let htmlString = "";
         for (const task of tasks) {
@@ -23,14 +36,18 @@
             `;
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
+
+        const removeButttons = document.querySelectorAll(".js-remove");
+        removeButttons.forEach((removeButttons, index) => {
+            removeButttons.addEventListener("click", () => {
+             removeTask(index);
+            })
+             
+        })
     };
 
-    const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-        });
-        render();
-    }
+
+
  const onFormSubmit = (event) => {
     event.preventDefault();
 

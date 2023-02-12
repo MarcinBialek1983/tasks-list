@@ -1,0 +1,40 @@
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttons__button {
+    color: teal;
+    border: none;
+    background-color: transparent;
+    margin: 0 0 0 20px;
+    transition: color 0,5s;
+}
+
+@media (max-width: 767px){
+    .buttons__button {
+        flex-basis: 100%;
+        margin: 10px;
+    }
+    
+}
+
+.buttons__button:disabled {
+    color: #ccc;
+}
+
+.form__button {
+    padding: 10px;
+    background-color: teal;
+    color: white;
+    border: none;
+}
+
+.form__button:hover{
+    background-color: hsl(180, 100%, 35%);
+    transform: scale(1.05);
+}
+
+.form__button:active {
+    background-color: hsl(180, 100%, 41%);
+}

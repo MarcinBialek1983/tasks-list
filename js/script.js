@@ -77,7 +77,7 @@ const renderTasks = () => {
                 </li>
                 `;
 
-        const taskElement = document.querySelector(".js-tasks");
+        const taskElement = document.querySelector(".js-tasksList");
         taskElement.innerHTML = tasks.map(tasksListToHTML).join("");
     
 

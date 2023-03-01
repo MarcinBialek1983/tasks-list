@@ -8,7 +8,8 @@
     border: none;
     background-color: transparent;
     margin: 0 0 0 20px;
-    transition: color 0,5s;
+    transition: color 0.5s;
+    cursor: pointer;
 }
 
 @media (max-width: 767px){
@@ -23,18 +24,8 @@
     color: #ccc;
 }
 
-.form__button {
-    padding: 10px;
-    background-color: teal;
-    color: white;
-    border: none;
+.buttons__button:hover{
+    color: hsl(180, 100%, 35%);
+    transform: scale(1.2);
 }
 
-.form__button:hover{
-    background-color: hsl(180, 100%, 35%);
-    transform: scale(1.05);
-}
-
-.form__button:active {
-    background-color: hsl(180, 100%, 41%);
-}

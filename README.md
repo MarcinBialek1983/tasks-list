@@ -3,7 +3,7 @@
 ## You can use it to better control your daily household chores.
 
 ## Demo
-https://github.com/MarcinBialek1983/tasks-list.git
+https://marcinbialek1983.github.io/tasks-list/
 
 ![Gif](gif/ezgif.com-crop.gif)
 

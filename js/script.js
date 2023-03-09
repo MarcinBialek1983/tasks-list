@@ -62,22 +62,31 @@
     };
 
     const renderTasks = () => {
-        const tasksListToHTML = task =>
-            `
-        <li class="tasks__item${task.done && hideDoneTasks ? " tasks__item--hidden" :""}">
+        const tasksListToHTML = task => `
+        <li
+         class="tasks__item${task.done &&
+                hideDoneTasks ? " tasks__item--hidden"
+                : ""}">
                 <button
-                 class="tasks__button tasks__button--toggleDone js-toggleDone">
-                 ${task.done ? "✔" : ""}
+                        class="tasks__button
+                        tasks__button--toggleDone js-toggleDone"
+                >
+                         ${task.done ? "✔" : ""}
                 </button>
                 <span 
-                class="tasks__content ${task.done ? "tasks__content--done" :""}">
-                 ${task.content}
-                 </span>
+                        class="tasks__content 
+            ${task.done ? "tasks__content--done" : ""}"
+                >
+                         ${task.content}
+                </span>
                 <button 
-                class="tasks__button tasks__button--remove js-remove">🗑
+                        class="tasks__button
+                        tasks__button--remove js-remove"
+                >
+                        🗑
                 </button>
-                </li>
-                `;
+        </li>
+    `;
 
         const taskElement = document.querySelector(".js-tasksList");
         taskElement.innerHTML = tasks.map(tasksListToHTML).join("");
@@ -100,14 +109,17 @@
             return;
         }
         buttonsElement.innerHTML = `
-        <button
-         class="buttons__button js-toggleHideDoneTasks">
-        ${hideDoneTasks ? "Pokaż" :"Ukryj"} ukończone
-        </button>
-        <button
-         class="buttons__button js-markAllDone" ${tasks.every(({ done }) =>done) ? "disabled" : ""}>
-        Ukończ wszystkie
-        </button>
+            <button
+                class="buttons__button js-toggleHideDoneTasks">
+                ${hideDoneTasks ? "Pokaż" : "Ukryj"}
+                ukończone
+            </button>
+            <button
+                class="buttons__button js-markAllDone"
+                ${tasks.every(({ done }) => done) ? "disabled" : ""}
+                >
+                Ukończ wszystkie
+            </button>
         `;
     };
 
@@ -125,6 +137,7 @@
         };
 
     };
+    
     const onFormSubmit = (event) => {
         event.preventDefault();
 
